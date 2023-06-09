@@ -1,5 +1,5 @@
-paragrafo = "A GATA MAL COMPREENDIDA"
 print("---------------------------")
+paragrafo = "A GATA MAL COMPREENDIDA"
 input(paragrafo)
 input("")
 
@@ -11,7 +11,7 @@ input(paragrafo)
 input("")
 
 cidade = input("Onde você mora mesmo?: ")
-while cidade == "":
+while not cidade:
     cidade = input("Onde você mora mesmo?: ")
 
 escolha1 = "Isso, foi bem aí mesmo: "+cidade+"!"
@@ -23,7 +23,7 @@ input(paragrafo)
 print("")
 
 dono = input("Como era mesmo o nome do dono?: ")
-while dono == "":
+while not dono:
     dono = input("Como era mesmo o nome do dono?: ")
 
 print("")
@@ -67,4 +67,4 @@ while gata == "":
 
 idade = input("Quantos anos a gata vai ter?: ")
 while idade == "":
-    idade = input("Quantos anos a gata vai ter?: ")
+    idade = input("Quantos anos a gata vai ter?: ", end="")
