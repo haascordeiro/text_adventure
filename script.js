@@ -105,6 +105,31 @@ function onInserirIdadeGataKeyup (evt) {
 inserirIdadeGata.addEventListener("keyup", onInserirIdadeGataKeyup)
 
 
+// typying effect
+
+const elements = document.querySelectorAll(".digitando");
+const delay = 20; // Atraso em milissegundos entre cada caractere
+
+function typeText(element) {
+  const text = element.textContent;
+  let index = 0;
+  element.textContent = "";
+
+  function addNextCharacter() {
+    if (index < text.length) {
+      element.textContent += text.charAt(index);
+      index++;
+      setTimeout(addNextCharacter, delay);
+    }
+  }
+
+  addNextCharacter();
+}
+
+elements.forEach((element) => {
+  typeText(element);
+});
+
 
 
 
