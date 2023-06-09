@@ -6,7 +6,6 @@ const state = {
   idadeGata: "",
 }
 
-
 // capture elements
 const btnEnviarCidadeDono = document.getElementById("enviarCidadeDono")
 const inserirCidadeDono = document.getElementById("inserirCidadeDono")
@@ -31,18 +30,25 @@ const fraseCidade = document.getElementById("fraseCidade")
 const fraseDono = document.getElementById("fraseDono")
 const fraseGata = document.getElementById("fraseGata")
 
-
 // add events
 function salvarCidadeState() {
   state.cidadeDono = inserirCidadeDono.value
 
   if (inserirCidadeDono.value.length > 0) {
     cp1pt2.style.setProperty("display", "initial"),
-    escolha2.style.setProperty("display", "initial"),
-    fraseCidade.innerText = `Isso, foi bem aí mesmo: ${state.cidadeDono}!`
+      escolha2.style.setProperty("display", "initial"),
+      (fraseCidade.innerText = `Isso, foi bem aí mesmo: ${state.cidadeDono}!`)
+
+    const nextText = document.querySelectorAll("#cp1pt2 > .digitando")
+
+    if (nextText) {
+      typeText(nextText[0], () => {
+        typeText(nextText[1])
+      })
+    }
 
     inserirNomeDono.focus()
-    }
+  }
 }
 btnEnviarCidadeDono.addEventListener("click", salvarCidadeState)
 
@@ -51,88 +57,89 @@ function salvarNomeDonoState() {
 
   if (inserirNomeDono.value.length > 0) {
     cp1pt3.style.setProperty("display", "initial"),
-    escolha3.style.setProperty("display", "initial")
+      escolha3.style.setProperty("display", "initial")
     fraseDono.innerText = `${state.nomeDono} morava em um condomínio, comprou uma gata de raça bem cara e bonita e levou para seu apartamento.`
-    
+
     inserirNomeGata.focus()
-    }
+  }
 }
 btnEnviarNomeDono.addEventListener("click", salvarNomeDonoState)
 
-function salvarNomeGataState () {
+function salvarNomeGataState() {
   state.nomeGata = inserirNomeGata.value
 
   if (inserirNomeGata.value.length > 0) {
     escolha4.style.setProperty("display", "initial"),
-    fraseGata.innerText = `Quantos anos a ${state.nomeGata} vai ter?`
+      (fraseGata.innerText = `Quantos anos a ${state.nomeGata} vai ter?`)
 
     inserirIdadeGata.focus()
-    }
+  }
 }
 btnEnviarNomeGata.addEventListener("click", salvarNomeGataState)
 
-function salvarIdadeGataState () {
+function salvarIdadeGataState() {
   state.idadeGata = inserirIdadeGata.value
 }
 btnEnviarIdadeGata.addEventListener("click", salvarIdadeGataState)
 
-function onInserirCidadeDonoKeyup (evt) {
+function onInserirCidadeDonoKeyup(evt) {
   if (evt.code == "Enter") {
     salvarCidadeState()
   }
 }
 inserirCidadeDono.addEventListener("keyup", onInserirCidadeDonoKeyup)
 
-function onInserirNomeDonoKeyup (evt) {
+function onInserirNomeDonoKeyup(evt) {
   if (evt.code == "Enter") {
     salvarNomeDonoState()
   }
 }
 inserirNomeDono.addEventListener("keyup", onInserirNomeDonoKeyup)
 
-function onInserirNomeGataKeyup (evt) {
+function onInserirNomeGataKeyup(evt) {
   if (evt.code == "Enter") {
     salvarNomeGataState()
   }
 }
 inserirNomeGata.addEventListener("keyup", onInserirNomeGataKeyup)
 
-function onInserirIdadeGataKeyup (evt) {
+function onInserirIdadeGataKeyup(evt) {
   if (evt.code == "Enter") {
     salvarIdadeGataState()
   }
 }
 inserirIdadeGata.addEventListener("keyup", onInserirIdadeGataKeyup)
 
-
 // typying effect
 
-const elements = document.querySelectorAll(".digitando");
-const delay = 20; // Atraso em milissegundos entre cada caractere
+const firstText = document.querySelector("#cp1pt1 > .digitando")
+const delay = 20 // Atraso em milissegundos entre cada caractere
 
-function typeText(element) {
-  const text = element.textContent;
-  let index = 0;
-  element.textContent = "";
+function typeText(element, next) {
+  const text = element.textContent
+  let index = 0
+  element.textContent = ""
 
   function addNextCharacter() {
     if (index < text.length) {
-      element.textContent += text.charAt(index);
-      index++;
-      setTimeout(addNextCharacter, delay);
+      element.textContent += text.charAt(index)
+      index++
+      setTimeout(addNextCharacter, delay)
+    } else if (next) {
+      next()
     }
   }
 
-  addNextCharacter();
+  addNextCharacter()
 }
 
-elements.forEach((element) => {
+if (firstText) {
+  typeText(firstText)
+}
+
+/* elements.forEach((element) => {
   typeText(element);
-});
-
-
-
-
+}); */
 
 // debug application
 
