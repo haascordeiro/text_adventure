@@ -108,6 +108,7 @@ inserirIdadeGata.addEventListener("keyup", onInserirIdadeGataKeyup)
 
 
 
+
 // debug application
 
 const btnDepurar = document.getElementById("btnDepurar")
