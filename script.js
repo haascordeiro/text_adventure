@@ -50,8 +50,11 @@ const btnCp2Dc4a = document.getElementById("btnCp2Dc4a")
 const btnCp2Dc5 = document.getElementById("btnCp2Dc5")
 const btnCp2Dc6 = document.getElementById("btnCp2Dc6")
 const btnCp2Dc7 = document.getElementById("btnCp2Dc7")
+const btnCp2Dc7a = document.getElementById("btnCp2Dc7a")
 const btnCp2Dc8 = document.getElementById("btnCp2Dc8")
+const btnCp2Dc8a = document.getElementById("btnCp2Dc8a")
 const btnCp2Dc9 = document.getElementById("btnCp2Dc9")
+const btnCp2Dc9a = document.getElementById("btnCp2Dc9a")
 const btnCp2Dc10 = document.getElementById("btnCp2Dc10")
 
 
@@ -107,28 +110,28 @@ btnEnviarIdadeGata.addEventListener("click", salvarIdadeGataState)
 
 // (keyup events)
 function onInserirCidadeDonoKeyup(evt) {
-  if (evt.code == "Enter") {
+  if (evt.code == "Enter" || evt.keyCode === 13 || evt.key === 'Enter') {
     salvarCidadeState()
   }
 }
 inserirCidadeDono.addEventListener("keyup", onInserirCidadeDonoKeyup)
 
 function onInserirNomeDonoKeyup(evt) {
-  if (evt.code == "Enter") {
+  if (evt.code == "Enter" || evt.keyCode === 13 || evt.key === 'Enter') {
     salvarNomeDonoState()
   }
 }
 inserirNomeDono.addEventListener("keyup", onInserirNomeDonoKeyup)
 
 function onInserirNomeGataKeyup(evt) {
-  if (evt.code == "Enter") {
+  if (evt.code == "Enter" || evt.keyCode === 13 || evt.key === 'Enter') {
     salvarNomeGataState()
   }
 }
 inserirNomeGata.addEventListener("keyup", onInserirNomeGataKeyup)
 
 function onInserirIdadeGataKeyup(evt) {
-  if (evt.code == "Enter") {
+  if (evt.code == "Enter" || evt.keyCode === 13 || evt.key === 'Enter') {
     salvarIdadeGataState()
   }
 }
@@ -191,11 +194,23 @@ function showEscolha2_7() {
 }
 btnCp2Dc7.addEventListener("click", showEscolha2_7)
 
+function showEscolha2_7a() {
+  cp2final1.style.setProperty("display", "block")
+  btnCp2Dc8a.setAttribute("disabled", true)
+}
+btnCp2Dc7a.addEventListener("click", showEscolha2_7a)
+
 function showEscolha2_8() {
   cp2final2.style.setProperty("display", "block")
   btnCp2Dc7.setAttribute("disabled", true)
 }
-btnCp2Dc8.addEventListener("click", showEscolha2_7)
+btnCp2Dc8.addEventListener("click", showEscolha2_8)
+
+function showEscolha2_8a() {
+  cp2final2.style.setProperty("display", "block")
+  btnCp2Dc7a.setAttribute("disabled", true)
+}
+btnCp2Dc8a.addEventListener("click", showEscolha2_8a)
 
 function showEscolha2_9() {
   cp3.style.setProperty("display", "block")
@@ -203,6 +218,13 @@ function showEscolha2_9() {
   fraseDono2.innerText = `Sim! Era o ${state.nomeDono.toUpperCase()}!`
 }
 btnCp2Dc9.addEventListener("click", showEscolha2_9)
+
+function showEscolha2_9a() {
+  cp3.style.setProperty("display", "block")
+  btnCp2Dc9a.setAttribute("disabled", true)
+  fraseDono2.innerText = `Sim! Era o ${state.nomeDono.toUpperCase()}!`
+}
+btnCp2Dc9a.addEventListener("click", showEscolha2_9a)
 
 function showEscolha2_10() {
   creditos.style.setProperty("display", "block")
