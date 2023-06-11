@@ -37,15 +37,7 @@ function salvarCidadeState() {
   if (inserirCidadeDono.value.length > 0) {
     cp1pt2.style.setProperty("display", "initial"),
       escolha2.style.setProperty("display", "initial"),
-      (fraseCidade.innerText = `Isso, foi bem aí mesmo: ${state.cidadeDono}!`)
-
-    const nextText = document.querySelectorAll("#cp1pt2 > .digitando")
-
-    if (nextText) {
-      typeText(nextText[0], () => {
-        typeText(nextText[1])
-      })
-    }
+    fraseCidade.innerText = `Isso, foi bem aí mesmo: ${state.cidadeDono}!`
 
     inserirNomeDono.focus()
   }
@@ -58,7 +50,7 @@ function salvarNomeDonoState() {
   if (inserirNomeDono.value.length > 0) {
     cp1pt3.style.setProperty("display", "initial"),
       escolha3.style.setProperty("display", "initial")
-    fraseDono.innerText = `${state.nomeDono} morava em um condomínio, comprou uma gata de raça bem cara e bonita e levou para seu apartamento.`
+    fraseDono.innerText = `${state.nomeDono} morava em um condomínio, comprou uma gata de raça bem cara e bonita e levou para o seu apartamento.`
 
     inserirNomeGata.focus()
   }
@@ -70,7 +62,7 @@ function salvarNomeGataState() {
 
   if (inserirNomeGata.value.length > 0) {
     escolha4.style.setProperty("display", "initial"),
-      (fraseGata.innerText = `Quantos anos a ${state.nomeGata} vai ter?`)
+    fraseGata.innerText = `Quantos anos a ${state.nomeGata} vai ter?`
 
     inserirIdadeGata.focus()
   }
@@ -82,6 +74,8 @@ function salvarIdadeGataState() {
 }
 btnEnviarIdadeGata.addEventListener("click", salvarIdadeGataState)
 
+
+// (keyup events)
 function onInserirCidadeDonoKeyup(evt) {
   if (evt.code == "Enter") {
     salvarCidadeState()
@@ -110,10 +104,28 @@ function onInserirIdadeGataKeyup(evt) {
 }
 inserirIdadeGata.addEventListener("keyup", onInserirIdadeGataKeyup)
 
+
+
+
+
+
+
+
+
+
+// debug application
+
+const btnDepurar = document.getElementById("btnDepurar")
+function depurar() {
+  console.table(state)
+}
+btnDepurar.addEventListener("click", depurar)
+
+
 // typying effect
 
-const firstText = document.querySelector("#cp1pt1 > .digitando")
-const delay = 20 // Atraso em milissegundos entre cada caractere
+/* const firstText = document.querySelector("#cp1pt1 > .digitando")
+const delay = 40 // Atraso em milissegundos entre cada caractere
 
 function typeText(element, next) {
   const text = element.textContent
@@ -140,11 +152,3 @@ if (firstText) {
 /* elements.forEach((element) => {
   typeText(element);
 }); */
-
-// debug application
-
-const btnDepurar = document.getElementById("btnDepurar")
-function depurar() {
-  console.table(state)
-}
-btnDepurar.addEventListener("click", depurar)

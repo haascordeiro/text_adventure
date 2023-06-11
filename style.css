@@ -11,27 +11,27 @@ h1, h2 {
     padding: 10px
 }
 
-  .cp1pt1, #escolha1 {
+.cp1pt1, #escolha1 {
     display: initial;
     font-size: x-large;
   }
 
-  .cp1pt2, .cp1pt3, #escolha2, #escolha3, #escolha4 {
+.cp1pt2, .cp1pt3, #escolha2, #escolha3, #escolha4 {
     display: none;
     font-size: x-large;
   }
   
-  input {
+input {
     border: 2px solid rgb(123, 123, 207);
     padding: 1.5%;
     font-size: large;
   }
 
-  button {
+button {
     background-color: white;
     border-radius: 8px;
   }
 
-  button:hover {
+button:hover {
     cursor: pointer;
   }
