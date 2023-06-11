@@ -16,7 +16,8 @@ h1, h2 {
     font-size: x-large;
   }
 
-.cp1pt2, .cp1pt3, #escolha2, #escolha3, #escolha4 {
+.cp1pt2, .cp1pt3, #escolha2, #escolha3, #escolha4, .cp2pt1, .decisao1_1, .decisao1_2, .decisao3_1, .decisao3_1con, 
+.decisao3_2, .cp2final1, .cp2final2, .cp3, .creditos {
     display: none;
     font-size: x-large;
   }
@@ -30,6 +31,7 @@ input {
 button {
     background-color: white;
     border-radius: 8px;
+    font-size: large;
   }
 
 button:hover {
