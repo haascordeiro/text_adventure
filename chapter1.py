@@ -1,18 +1,18 @@
 paragrafo = "Esta é uma história interativa. Tecle Enter para dar continuidade ao texto e divirta-se!"
 input(paragrafo)
-input("")
+print("")
 
 print("---------------------------")
 paragrafo = "A GATA MAL COMPREENDIDA"
 input(paragrafo)
-input("")
+print("")
 
 paragrafo = "Era uma vez, muito tempo atrás, em um lugar bem longe daqui... \n" \
             "Pera ai, pera ai!"
 input(paragrafo)
 paragrafo = "Para tudo! Isso foi há um mês e foi bem perto daqui!"
 input(paragrafo)
-input("")
+print("")
 
 cidade = input("Onde você mora mesmo?: ")
 while not cidade:
@@ -30,7 +30,7 @@ dono = input("Como era mesmo o nome do dono?: ")
 while not dono:
     dono = input("Como era mesmo o nome do dono?: ")
 
-paragrafo = dono.capitalize()+" morava em um condomínio, comprou uma gata de raça bem cara e bonita.."
+paragrafo = dono.capitalize()+" morava em um condomínio, comprou uma gata de raça bem cara e bonita..."
 input(paragrafo)
 print("")
 
@@ -76,11 +76,11 @@ while idade == "":
 print("")
 paragrafo = "---------------------------"
 input(paragrafo)
-input("")
+print("")
 
 paragrafo = "Lá estava a "+gata.capitalize()+" sozinha na floresta, molhada e com fome.\n" \
             "Afinal, "+idade+" anos não é uma idade fácil para um gato...\n" \
             "Que raiva do síndico! \n" \
             "Ela andou, andou e andou até chegar na frente de um estreito, mas fundo buraco."
 input(paragrafo)
-input("")
+print("")

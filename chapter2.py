@@ -1,11 +1,11 @@
 paragrafo = "O que ela faz?"
 input(paragrafo)
-input("")
+print("")
 
 paragrafo = "Alternativa A: ela pula por cima.\n" \
             "Alternativa B: ela dá meia volta e vai embora."
 input(paragrafo)
-input("")
+print("")
 
 escolha = input("O que ela faz? (A ou B): ").upper()
 
@@ -33,11 +33,11 @@ elif escolha == "B":
         " \n" \
         "O que ela faz?")
 
-input("")
+print("")
 paragrafo = "Alternativa A: ela come o peixe, pois está há tempos sem comer!\n" \
             "Alternativa B: ela não come, pois parece suspeito..."
 input(paragrafo)
-input("")
+print("")
 
 escolha = input("O que ela faz? (A ou B): ").upper()
 
@@ -83,13 +83,12 @@ paragrafo = "Ela anda, anda, anda até chegar a uma clareira, \n" \
             " \n" \
             "O que ela faz?"
 input(paragrafo)
-input("")
+print("")
 
-paragrafo = "Alternativa A: ela tenta ajudar o pequeno, mas acaba sendo presa junto.\n" \
-            "Alternativa B: ela passa pelo meio da clareira, quase escapa, \n" \
-            "mas no final o caçador a captura e ela acaba sendo presa junto.."
+paragrafo = "Alternativa A: ela tenta ajudar. \n" \
+            "Alternativa B: ela passa pelo meio da clareira."
 input(paragrafo)
-input("")
+print("")
 
 escolha = input("O que ela faz? (A ou B): ").upper()
 
@@ -107,4 +106,4 @@ if escolha == "A" or "B":
 print("")
 paragrafo = "---------------------------"
 input(paragrafo)
-input("")
+print("")
